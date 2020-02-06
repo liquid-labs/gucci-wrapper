@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/gucci-wrapper",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "A thin, NPM-aware installation wrapper around 'noqcks/gucci'.",
   "bin": {
     "gucci": "./bin/gucci"
