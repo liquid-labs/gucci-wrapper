@@ -5,9 +5,16 @@
   "bin": {
     "gucci": "./bin/gucci"
   },
+  "files": [
+    "gucci-install.sh"
+  ],
   "scripts": {
-    "preinstall": "mkdir -p bin && ./gucci-install.sh",
-    "test": "[[ $(echo 'Gucci test {{ .STATUS }}' | ./bin/gucci -s STATUS='good') == 'Gucci test good' ]]"
+    "preinstall": "./gucci-install.sh",
+    "prepublishOnly": "! [[ -d bin ]] || mv bin tmp",
+    "prepack": "npm run prepublishOnly",
+    "postpublish": "! [[ -d tmp ]] || mv tmp bin",
+    "postpack": "npm run postpublish",
+    "test": "./test.sh"
   },
   "keywords": [],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
