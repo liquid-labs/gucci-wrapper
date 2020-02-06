@@ -1,9 +1,12 @@
 {
-  "name": "@liquid-labs/liquid-labs/gucci-wrapper",
+  "name": "@liquid-labs/gucci-wrapper",
   "version": "1.0.0-alpha.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A thin, NPM-aware installation wrapper around 'noqcks/gucci'.",
+  "bin": {
+    "gucci": "./bin/gucci"
+  },
   "scripts": {
+    "preinstall": "mkdir -p bin && ./gucci-install.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
