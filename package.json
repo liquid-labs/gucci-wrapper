@@ -6,7 +6,8 @@
     "gucci": "./bin/gucci"
   },
   "files": [
-    "gucci-install.sh"
+    "gucci-install.sh",
+    "settings.sh"
   ],
   "scripts": {
     "preinstall": "./gucci-install.sh",
