@@ -14,7 +14,9 @@
     "prepack": "npm run prepublishOnly",
     "postpublish": "! [[ -d tmp ]] || mv tmp bin",
     "postpack": "npm run postpublish",
-    "test": "./test.sh"
+    "test": "./test.sh",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
