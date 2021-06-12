@@ -1,2 +1,2 @@
 GUCCI_BIN=./bin/gucci
-VERSION=1.2.2
+VERSION=1.4.0
