@@ -13,10 +13,11 @@ else
 fi
 
 echo -n "Version check: "
-if [[ $("${GUCCI_BIN}" -v) == *"${VERSION}" ]]; then
+BIN_VERSION=$("${GUCCI_BIN}" -v)
+if [[ "${BIN_VERSION}" == *"${VERSION}" ]] || [[ -n "${AD_HOC_RELEASE}" ]]; then
   echo "PASS"
 else
-  echo "FAIL"
+  echo "FAIL; expected version '${VERSION}', but got '${BIN_VERSION}'"
   EXIT=1
 fi
 
