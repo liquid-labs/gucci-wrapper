@@ -11,6 +11,8 @@ if [[ $1 == '--force' ]] || ! [[ -f "${GUCCI_BIN}" ]]; then
     PLATFORM='linux'
   fi
   mkdir -p "$(dirname "${GUCCI_BIN}")"
-  curl -L https://github.com/${REPO}/releases/download/${VERSION}/gucci-v${VERSION}-${PLATFORM}-amd64 -o "${GUCCI_BIN}"
+  URL="https://github.com/${REPO}/releases/download/${VERSION}/gucci-v${VERSION}-${PLATFORM}-amd64"
+  curl -L ${URL} -o "${GUCCI_BIN}" \
+    || { echo "There was a problem downloading gucci from: ${URL}"; exit 1; }
   chmod a+x "${GUCCI_BIN}"
 fi
